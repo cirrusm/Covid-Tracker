@@ -19,8 +19,8 @@ function App() {
   const [country, setCountry] = useState("worldwide");
   const [countryInfo, setCountryInfo] = useState({});
   const [tableData, setTableData] = useState([])
-  const [mapCenter, setMapCenter] = useState({lat: 41, lng: 20})
-  const [mapZoom, setMapZoom] = useState(4)
+  const [mapCenter, setMapCenter] = useState({lat: 38, lng: -97})
+  const [mapZoom, setMapZoom] = useState(3)
   const [mapCountries, setMapCountries] = useState([])
 
   useEffect(() => {
@@ -45,6 +45,7 @@ function App() {
           setTableData(sortedData);
           setMapCountries(data)
           setCountries(countries);
+          setMapZoom(4)
         });
     };
     //Now call the function you just created
