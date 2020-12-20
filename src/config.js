@@ -4,15 +4,15 @@ import numeral from "numeral";
 
 const casesTypeColors = {
   cases: {
-    hex: "#CC1034",
+    hex: "red",
     multiplier: 400,
   },
   recovered: {
-    hex: "#7dd71d",
-    multiplier: 1200,
+    hex: "green",
+    multiplier: 600,
   },
   deaths: {
-    hex: "#fb4443",
+    hex: "red",
     multiplier: 1000,
   },
 };
@@ -31,7 +31,7 @@ export const sortData = (data) => {
 };
 
 //Draw circles
-export const showDataOnMap = (data, casesType = "cases") =>
+export const showDataOnMap = (data, casesType) =>
   data.map((country) => (
     <Circle
       center={[country.countryInfo.lat, country.countryInfo.long]}
@@ -56,3 +56,7 @@ export const showDataOnMap = (data, casesType = "cases") =>
       </Popup>
     </Circle>
   ));
+
+  export const prettyPrintStat = (stat) => {
+    return stat ? `+${numeral(stat).format("0.0a")}` : "+0"
+  }

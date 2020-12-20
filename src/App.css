@@ -19,8 +19,10 @@ body {
 }
 
 .app__right {
-flex: 0.3
+  flex: .3;
+  margin-left: 15px;
 }
+
 
 .app__stats {
   display: flex;
@@ -29,7 +31,7 @@ flex: 0.3
 
 .App {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 20px;
 }
 

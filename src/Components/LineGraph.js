@@ -49,7 +49,7 @@ const options = {
 const LineGraph = () => {
   const [data, setData] = useState({});
 
-  const buildChartData = (data, casesType = "cases") => {
+  const buildChartData = (data, casesType) => {
     const chartData = [];
     let lastDataPoint;
 
