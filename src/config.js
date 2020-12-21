@@ -5,15 +5,15 @@ import numeral from "numeral";
 const casesTypeColors = {
   cases: {
     hex: "red",
-    multiplier: 400,
+    multiplier: 300,
   },
   recovered: {
     hex: "green",
-    multiplier: 600,
+    multiplier: 400,
   },
   deaths: {
     hex: "red",
-    multiplier: 1000,
+    multiplier: 800,
   },
 };
 

@@ -46,7 +46,7 @@ const options = {
   },
 };
 
-const LineGraph = () => {
+const LineGraph = ({casesType}) => {
   const [data, setData] = useState({});
 
   const buildChartData = (data, casesType) => {
@@ -60,6 +60,9 @@ const LineGraph = () => {
           //modifying data to make it so we display new cases and not total cases
           y: data[casesType][date] - lastDataPoint,
         };
+        if(newDataPoint.y < 0){
+          newDataPoint.y = 0
+        }
         chartData.push(newDataPoint);
       }
       lastDataPoint = data[casesType][date];
@@ -74,23 +77,23 @@ const LineGraph = () => {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
-          const chartData = buildChartData(data, "cases");
+          const chartData = buildChartData(data, casesType);
           setData(chartData);
         });
     };
     fetchData();
-  }, []);
+  }, [casesType]);
 
   return (
-    <div>
+    <div className="app__graph">
       {data?.length > 0 && (
       <Line
         options={options}
         data={{
           datasets: [
             {
-              backgroundColor: "rgba(204, 16, 52, 0.5)",
-              borderColor: "#CC1034",
+              backgroundColor: `${casesType === 'recovered' ? 'rgba(0, 255, 50 , 0.9)' : 'rgba(204, 16, 52, 0.5'}`,
+              borderColor: `${casesType === 'recovered' ? 'green' : '#CC1034'}`,
               data: data,
             },
           ],

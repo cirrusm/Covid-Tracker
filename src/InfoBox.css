@@ -1,5 +1,7 @@
 .infoBox {
     flex: 1;
+    text-align: center;
+    cursor: pointer;
 }
 
 .infoBox:not(:last-child) {
@@ -18,4 +20,16 @@
     font-weight: 700 !important;
     font-size: 0.8rem !important;
     margin-top: 15px !important;
+}
+
+.infoBox--selected {
+    border-top: 10px solid green
+}
+
+.infoBox--red {
+    border-color: red;
+}
+
+.green {
+    color: green;
 }

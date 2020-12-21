@@ -18,16 +18,26 @@ body {
   flex: 0.7
 }
 
-.app__right {
-  flex: .3;
-  margin-left: 15px;
-}
-
-
 .app__stats {
   display: flex;
   justify-content: space-between;
 }
+.app__right {
+  flex: .3;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.app__right .MuiCardContent-root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.app__graph {
+  flex-grow: 1;
+}
+
 
 .App {
   display: flex;
@@ -39,4 +49,17 @@ body {
   .App {
     flex-direction: column;
   }
+}
+
+.chartheader {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 35px;
+  font-weight: bold;
+  color: red;
+  text-align: center;
 }

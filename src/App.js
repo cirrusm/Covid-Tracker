@@ -17,7 +17,7 @@ import {prettyPrintStat} from './config'
 
 function App() {
   const [countries, setCountries] = useState([]);
-  const [country, setCountry] = useState("Worldwide");
+  const [country, setCountry] = useState("worldwide");
   const [countryInfo, setCountryInfo] = useState({});
   const [tableData, setTableData] = useState([])
   const [mapCenter, setMapCenter] = useState({lat: 38, lng: -97})
@@ -76,7 +76,7 @@ function App() {
     <div className="App">
       <div className="app__left">
         <div className="app__header">
-          <h1>Covid Tracker</h1>
+          <h1 className="title">COVID-19 Tracker</h1>
           <FormControl>
             <Select
               variant="outlined"
@@ -92,18 +92,23 @@ function App() {
         </div>
         <div className="app__stats">
           <InfoBox
+          isRed 
+          active={casesType === 'cases'}
           onClick={(e) => setCasesType('cases')}
             title="Cases"
             total={prettyPrintStat(countryInfo.cases)}
             cases={prettyPrintStat(countryInfo.todayCases)}
           />
           <InfoBox
+          active = {casesType === 'recovered'}
           onClick = {(e) => setCasesType('recovered')}
             title="Recovered"
             total={prettyPrintStat(countryInfo.recovered)}
             cases={prettyPrintStat(countryInfo.todayRecovered)}
           />
           <InfoBox
+          isRed
+          active = {casesType === 'deaths'}
           onClick = {(e) => setCasesType('deaths')}
             title="Deaths"
             total={prettyPrintStat(countryInfo.deaths)}
@@ -117,9 +122,9 @@ function App() {
       </div>
       <Card className="app__right">
         <CardContent>
-          <h3>Live Cases by country</h3>
+          <h3 className="chartheader">Live Cases by country</h3>
           <Table countries={tableData} />
-          <h3>worldwide new cases</h3>
+          <h3 className = "chartheader">Daily New {casesType} Worldwide</h3>
           <LineGraph casesType = {casesType}/>
         </CardContent>
       </Card>
