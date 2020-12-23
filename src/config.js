@@ -13,7 +13,7 @@ const casesTypeColors = {
   },
   deaths: {
     hex: "red",
-    multiplier: 800,
+    multiplier: 900,
   },
 };
 
