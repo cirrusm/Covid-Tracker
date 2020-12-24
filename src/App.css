@@ -27,6 +27,7 @@ body {
   margin-left: 15px;
   display: flex;
   flex-direction: column;
+  
 }
 
 .app__right .MuiCardContent-root {
@@ -53,12 +54,12 @@ body {
 
 .chartheader {
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
 .title {
-  font-size: 35px;
+  font-size: 45px;
   font-weight: bold;
   color: red;
   text-align: center;
