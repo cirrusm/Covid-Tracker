@@ -2,9 +2,9 @@
     height: 500px;
     background-color: white;
     padding: 1rem;
-    border-radius: 20px;
+    border-radius: 21px;
     margin-top: 16px;
-    box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5)
+    box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.49)
 }
 
 .map .leaflet-container {
@@ -26,7 +26,7 @@
 .info-name {
     font-size: 20px;
     font-weight: bold;
-    color: #555;
+    color: #554;
 }
 
 .info-confirmed,
