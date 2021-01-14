@@ -15,6 +15,7 @@ const Map = ({countries, center, zoom, casesType}) => {
       />
 {showDataOnMap(countries, casesType)}
         </LeafletMap>
+        <p>All Data Provided by: https://disease.sh/</p>
     </div>
   );
 }
